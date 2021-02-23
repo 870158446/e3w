@@ -58,7 +58,7 @@ const KeyValueCreate = React.createClass({
                     {
                         <Box>
                             <div className="kv-create-button" ><Button type="primary" size="large" onClick={this._createKey} disabled={cantClick} > CREATE KEY</Button></div>
-                            <div className="kv-create-button" ><Button type="primary" size="large" onClick={this._createDir} disabled={cantClick}>CREATE DIR</Button></div>
+                            {/* <div className="kv-create-button" ><Button type="primary" size="large" onClick={this._createDir} disabled={cantClick}>CREATE DIR</Button></div> */}
                         </Box>
                     }
                     {

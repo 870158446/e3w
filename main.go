@@ -3,17 +3,18 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/soyking/e3w/conf"
 	"github.com/soyking/e3w/e3ch"
 	"github.com/soyking/e3w/routers"
 	"go.etcd.io/etcd/version"
-	"os"
 )
 
 const (
-	PROGRAM_NAME    = "e3w"
-	PROGRAM_VERSION = "0.1.0"
+	programName    = "e3w"
+	programVersion = "0.1.0"
 )
 
 var configFilepath string
@@ -25,7 +26,7 @@ func init() {
 
 	if *rev {
 		fmt.Printf("[%s v%s]\n[etcd %s]\n",
-			PROGRAM_NAME, PROGRAM_VERSION,
+			programName, programVersion,
 			version.Version,
 		)
 		os.Exit(0)

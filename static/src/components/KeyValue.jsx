@@ -22,10 +22,10 @@ const KeyValue = React.createClass({
         // sorted dir and normal kv
         list.sort((l1, l2) => { return l1.is_dir === l2.is_dir ? l1.key > l2.key : l1.is_dir ? -1 : 1 })
         // trim prefix of dir, get the relative path, +1 for /
-        let prefixLen = this.state.dir.length + (this._isRoot() ? 0 : 1)
-        list.forEach(l => {
-            l.key = l.key.slice(prefixLen)
-        })
+        // let prefixLen = this.state.dir.length + (this._isRoot() ? 0 : 1)
+        // list.forEach(l => {
+        //     l.key = l.key.slice(prefixLen)
+        // })
         this.setState({ list: list })
     },
 
@@ -135,7 +135,7 @@ const KeyValue = React.createClass({
                         <Box vertical >
                             {
                                 this.state.list.map(
-                                    l => (<KeyValueItem key={l.key} enter={this._enter} set={this._set} unset={this._unset} info={l} />)
+                                    l => (<KeyValueItem enter={this._enter} set={this._set} unset={this._unset} info={l} />)
                                 )
                             }
                         </Box>

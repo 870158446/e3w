@@ -5,6 +5,7 @@
     "babel-plugin-antd": "^0.5.1",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^0.25.0",
     "html-webpack-plugin": "^2.22.0",
     "style-loader": "^0.13.1",
@@ -19,8 +20,8 @@
     "xhr": "^2.2.2"
   },
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js",
+    "build": "webpack -w",
     "watch": "npm run build -- --watch",
-    "publish": "NODE_ENV=production npm run build -- --optimize-minimize"
+    "publish": "cross-env NODE_ENV=production npm run build -- --optimize-minimize"
   }
 }

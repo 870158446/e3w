@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/soyking/e3ch"
+	"github.com/soyking/e3w/client"
 	"go.etcd.io/etcd/auth/authpb"
 	"go.etcd.io/etcd/clientv3"
 )

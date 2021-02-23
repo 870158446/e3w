@@ -2,7 +2,8 @@ package e3ch
 
 import (
 	"crypto/tls"
-	"github.com/soyking/e3ch"
+
+	"github.com/soyking/e3w/client"
 	"github.com/soyking/e3w/conf"
 	"go.etcd.io/etcd/clientv3"
 	"go.etcd.io/etcd/pkg/transport"
@@ -37,7 +38,9 @@ func NewE3chClient(config *conf.Config) (*client.EtcdHRCHYClient, error) {
 	if err != nil {
 		return nil, err
 	}
-	return client, client.FormatRootKey()
+	// 原先是默认创建root节点的，现在去掉这个逻辑
+	// return client, client.FormatRootKey()
+	return client, nil
 }
 
 func CloneE3chClient(username, password string, client *client.EtcdHRCHYClient) (*client.EtcdHRCHYClient, error) {

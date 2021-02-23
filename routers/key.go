@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/soyking/e3ch"
+	"github.com/soyking/e3w/client"
 )
 
 type Node struct {
@@ -12,9 +12,13 @@ type Node struct {
 }
 
 func parseNode(node *client.Node) *Node {
+	value := string(node.Value)
+	if node.IsDir {
+		value = ""
+	}
 	return &Node{
-		Key:   string(node.Key),
-		Value: string(node.Value),
+		Key:   string(node.DirName),
+		Value: value,
 		IsDir: node.IsDir,
 	}
 }
